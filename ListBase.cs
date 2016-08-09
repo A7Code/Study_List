@@ -8,7 +8,7 @@ namespace a7_Stack
 {
     class ListBase
     {
-        ListValue _fitst;
+        ListValue _fitst = new ListValue();
         int _count;
 
         public ListBase()
@@ -18,7 +18,7 @@ namespace a7_Stack
 
         public void add(object _inputAdd)
         {
-            
+            _fitst.add(_count, _count, _inputAdd);
         }
     }
 }
