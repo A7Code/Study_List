@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace a7_Stack
 {
-    class ListValue<T>
+    class ListValue
     {
-        public ListValue()
-        {
+        object _value;
+        ListValue _next;
+        int _index;
 
+        public ListValue(int _inputIndex)
+        {
+            _index = _inputIndex;
         }
+
     }
 }

@@ -8,8 +8,17 @@ namespace a7_Stack
 {
     class ListBase
     {
-        object _stack;
+        ListValue _fitst;
         int _count;
 
+        public ListBase()
+        {
+            _count = 0;
+        }
+
+        public void add(object _inputAdd)
+        {
+            
+        }
     }
 }
