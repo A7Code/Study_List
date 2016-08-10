@@ -27,17 +27,17 @@ namespace a7_Stack
         }
 
 
-        public override string ToString()
+        public string ToString(int _inputCount)
         {
-            string returnString = "\t";
+            string returnString = _index + "\t";
             if (_value == null)
                 returnString += "null";
             else
                 returnString += _value.ToString();
             returnString += "\n";
 
-            if (_next != null)
-                returnString += _next.ToString();
+            if (_index != _inputCount - 1)
+                returnString += _next.ToString(_inputCount);
 
             return returnString;
         }

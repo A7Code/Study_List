@@ -24,7 +24,7 @@ namespace a7_Stack
         public override string ToString()
         {
             string returnString = "Count : " + _count + "\n";
-            returnString += "Data : \n" + _fitst.ToString();
+            returnString += "Data : \n" + _fitst.ToString(_count);
 
             return returnString;
         }
