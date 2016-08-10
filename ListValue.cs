@@ -33,6 +33,14 @@ namespace a7_Stack
             return _next.get(_inputIndex);
         }
 
+        public void set(int _inputIndex, object _input)
+        {
+            if (_index == _inputIndex)
+                _value = _input;
+            else
+                _next.set(_inputIndex, _input);
+        }
+
         public string ToString(int _inputCount)
         {
             string returnString = _index + "\t";

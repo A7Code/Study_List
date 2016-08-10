@@ -29,6 +29,10 @@ namespace a7_Stack
                     return null;
                 return _fitst.get(_inputIndex);
             }
+            set
+            {
+                _fitst.set(_inputIndex, value);
+            }
         }
 
         public override string ToString()
