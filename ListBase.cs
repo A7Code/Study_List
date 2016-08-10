@@ -21,6 +21,16 @@ namespace a7_Stack
             _fitst.add(_count++, _inputAdd);
         }
 
+        public object this[int _inputIndex]
+        {
+            get
+            {
+                if (_inputIndex > _count - 1)
+                    return null;
+                return _fitst.get(_inputIndex);
+            }
+        }
+
         public override string ToString()
         {
             string returnString = "Count : " + _count + "\n";

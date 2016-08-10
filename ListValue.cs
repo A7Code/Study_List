@@ -26,20 +26,29 @@ namespace a7_Stack
                 _next.add(_inputIndex, _inputObj);
         }
 
+        public object get(int _inputIndex)
+        {
+            if (_index == _inputIndex)
+                return _value;
+            return _next.get(_inputIndex);
+        }
 
         public string ToString(int _inputCount)
         {
             string returnString = _index + "\t";
-            if (_value == null)
-                returnString += "null";
-            else
-                returnString += _value.ToString();
-            returnString += "\n";
+            returnString += _value + "\n";
 
             if (_index != _inputCount - 1)
                 returnString += _next.ToString(_inputCount);
 
             return returnString;
+        }
+
+        public override string ToString()
+        {
+            if (_value == null)
+                return "null";
+            return _value.ToString();
         }
     }
 }
