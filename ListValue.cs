@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace a7_Stack
 {
-    class ListValue
+    class ListValue : ListBase
     {
         object _value;
-        ListValue _next;
+        ListValue _previous, _next;
         int _index;
 
         public ListValue() { }
+        public ListValue(ListValue _inputPrevious)
+        {
+            _previous = _inputPrevious;
+        }
 
         public void add(int _inputIndex, object _inputObj)
         {
@@ -20,7 +24,7 @@ namespace a7_Stack
             {
                 _index = _inputIndex;
                 _value = _inputObj;
-                _next = new ListValue();
+                _next = new ListValue(this);
             }
             else
                 _next.add(_inputIndex, _inputObj);
@@ -39,6 +43,16 @@ namespace a7_Stack
                 _value = _input;
             else
                 _next.set(_inputIndex, _input);
+        }
+
+        public int removeAt(int _inputIndex)
+        {
+            if (_index == _inputIndex)
+            {
+
+            }
+
+            return 0;
         }
 
         public string ToString(int _inputCount)
