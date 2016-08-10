@@ -9,13 +9,13 @@ namespace a7_Stack
     class ListValue : ListBase
     {
         object _value;
-        ListValue _previous, _next;
         int _index;
 
         public ListValue() { }
         public ListValue(ListValue _inputPrevious)
+            :base(_inputPrevious)
         {
-            _previous = _inputPrevious;
+            
         }
 
         public void add(int _inputIndex, object _inputObj)

@@ -8,7 +8,7 @@ namespace a7_Stack
 {
     class a7List
     {
-        ListValue _fitst = new ListValue();
+        ListBase _head = new ListBase();
         int _count;
 
         public a7List()
@@ -18,7 +18,7 @@ namespace a7_Stack
 
         public void add(object _inputAdd)
         {
-            _fitst.add(_count++, _inputAdd);
+            _head.add(_count++, _inputAdd);
         }
 
         public object this[int _inputIndex]
@@ -27,18 +27,18 @@ namespace a7_Stack
             {
                 if (_inputIndex > _count - 1)
                     return null;
-                return _fitst.get(_inputIndex);
+                return _head.get(_inputIndex);
             }
             set
             {
-                _fitst.set(_inputIndex, value);
+                _head.set(_inputIndex, value);
             }
         }
 
         public override string ToString()
         {
             string returnString = "Count : " + _count + "\n";
-            returnString += "Data : \n" + _fitst.ToString(_count);
+            returnString += "Data : \n" + _head.ToString(_count);
 
             return returnString;
         }
