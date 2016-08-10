@@ -18,7 +18,15 @@ namespace a7_Stack
 
         public void add(object _inputAdd)
         {
-            _fitst.add(_count, _count, _inputAdd);
+            _fitst.add(_count++, _inputAdd);
+        }
+
+        public override string ToString()
+        {
+            string returnString = "Count : " + _count + "\n";
+            returnString += "Data : \n" + _fitst.ToString();
+
+            return returnString;
         }
     }
 }
