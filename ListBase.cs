@@ -20,11 +20,11 @@ namespace a7_Stack
 
         }
 
-        public virtual void add(int _inputIndex, object _input)
+        public virtual void add(object _input)
         {
             if (_next == null)
                 _next = new ListValue();
-            _next.add(_inputIndex, _input);
+            _next.add(_input);
         }
 
         public virtual int removeAt(int _inputIndex)
@@ -32,9 +32,9 @@ namespace a7_Stack
             return _next.removeAt(_inputIndex);
         }
 
-        public virtual string ToString(int _inputIndex)
+        public virtual string ToString(int _inputIndex, int _inputFC)
         {
-            return _next.ToString(_inputIndex);
+            return _next.ToString(_inputIndex, _inputFC);
         }
     }
 }

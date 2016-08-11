@@ -18,7 +18,8 @@ namespace a7_Stack
 
         public void add(object _inputAdd)
         {
-            _head.add(_count++, _inputAdd);
+            _head.add(_inputAdd);
+            _count++;
         }
 
         public object this[int _inputIndex]
@@ -43,7 +44,7 @@ namespace a7_Stack
         public override string ToString()
         {
             string returnString = "Count : " + _count + "\n";
-            returnString += "Data : \n" + _head.ToString(_count);
+            returnString += "Data : \n" + _head.ToString(0, _count);
 
             return returnString;
         }

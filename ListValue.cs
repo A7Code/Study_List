@@ -9,7 +9,7 @@ namespace a7_Stack
     class ListValue : ListBase
     {
         object _value;
-        int _index;
+        //int _index;
 
         public ListValue() { }
         public ListValue(ListValue _inputPrevious)
@@ -22,51 +22,52 @@ namespace a7_Stack
             _value = null;
         }
 
-        public override void add(int _inputIndex, object _inputObj)
+        public override void add(object _inputObj)
         {
             if (_next == null)
             {
-                _index = _inputIndex;
                 _value = _inputObj;
                 _next = new ListValue(this);
             }
             else
-                _next.add(_inputIndex, _inputObj);
+                _next.add(_inputObj);
         }
 
         public object get(int _inputIndex)
         {
-            if (_index == _inputIndex)
+            if (_inputIndex == 0)
                 return _value;
-            return _next.get(_inputIndex);
+            return _next.get(--_inputIndex);
         }
 
         public void set(int _inputIndex, object _input)
         {
-            if (_index == _inputIndex)
+            if (_inputIndex == 0)
                 _value = _input;
             else
-                _next.set(_inputIndex, _input);
+                _next.set(--_inputIndex, _input);
         }
 
         public override int removeAt(int _inputIndex)
         {
-            if (_index == _inputIndex)
+            if (_inputIndex == 0)
             {
                 _previous._next = _next;
                 return 1;
             }
             else
-                return _next.removeAt(_inputIndex);
+                return _next.removeAt(--_inputIndex);
         }
 
-        public override string ToString(int _inputCount)
+        public override string ToString(int _inputCount, int _inputFC)
         {
-            string returnString = _index + "\t";
-            returnString += _value + "\n";
+            string returnString = _inputCount++ + "\t";
+            if (_value != null)
+                returnString += _value.GetType();
+            returnString += "\t" + _value + "\n";
 
-            if (_index != _inputCount - 1)
-                returnString += _next.ToString(_inputCount);
+            if (_inputCount != _inputFC)
+                returnString += _next.ToString(_inputCount, _inputFC);
 
             return returnString;
         }
