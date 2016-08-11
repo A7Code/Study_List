@@ -8,10 +8,10 @@ namespace a7_Stack
 {
     class ListBase
     {
-        internal ListValue _previous, _next;
+        internal ListBase _previous, _next;
 
         public ListBase() { }
-        public ListBase(ListValue _inputPrevious)
+        public ListBase(ListBase _inputPrevious)
         {
             _previous = _inputPrevious;
         }
@@ -23,8 +23,17 @@ namespace a7_Stack
         public virtual void add(object _input)
         {
             if (_next == null)
-                _next = new ListValue();
+                _next = new ListValue(this);
             _next.add(_input);
+        }
+
+        public virtual object get(int _inputIndex)
+        {
+            return null;
+        }
+        public virtual void set(int _inputIndex, object _input)
+        {
+
         }
 
         public virtual int removeAt(int _inputIndex)

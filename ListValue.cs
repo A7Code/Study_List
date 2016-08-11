@@ -10,11 +10,10 @@ namespace a7_Stack
     {
         object _value;
 
-        public ListValue() { }
-        public ListValue(ListValue _inputPrevious)
-            :base(_inputPrevious)
+        public ListValue(ListBase _inputPrevious)
+           : base(_inputPrevious)
         {
-            
+
         }
         ~ListValue()
         {
@@ -32,7 +31,7 @@ namespace a7_Stack
                 _next.add(_inputObj);
         }
 
-        public object get(int _inputIndex)
+        public override object get(int _inputIndex)
         {
             if (_inputIndex == 0)
                 return _value;
@@ -40,7 +39,7 @@ namespace a7_Stack
                 --_inputIndex);
         }
 
-        public void set(int _inputIndex, object _input)
+        public override void set(int _inputIndex, object _input)
         {
             if (_inputIndex == 0)
                 _value = _input;
