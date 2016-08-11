@@ -32,6 +32,16 @@ namespace a7_Stack
             return _next.removeAt(_inputIndex);
         }
 
+        public virtual int remove(int _inputCount, object _input)
+        {
+            return _next.remove(_inputCount, _input);
+        }
+
+        internal void removeData()
+        {
+
+        }
+
         public virtual string ToString(int _inputIndex, int _inputFC)
         {
             return _next.ToString(_inputIndex, _inputFC);

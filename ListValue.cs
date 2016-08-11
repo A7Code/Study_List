@@ -59,6 +59,19 @@ namespace a7_Stack
                 return _next.removeAt(--_inputIndex);
         }
 
+        public override int remove(int _inputCount, object _input)
+        {
+            int returnInt = 0;
+            if (_value.Equals(_input))
+            {
+                _previous._next = _next;
+                returnInt++;
+            }
+            if (_inputCount != 1)
+                returnInt += _next.remove(--_inputCount, _input);
+            return returnInt;
+        }
+
         public override string ToString(int _inputCount, int _inputFC)
         {
             string returnString = _inputCount++ + "\t";

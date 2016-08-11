@@ -41,6 +41,11 @@ namespace a7_Stack
             _count -= _head.removeAt(_inputIndex);
         }
 
+        public void remove(object _input)
+        {
+            _count -= _head.remove(_count, _input);
+        }
+
         public override string ToString()
         {
             string returnString = "Count : " + _count + "\n";
