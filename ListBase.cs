@@ -15,6 +15,26 @@ namespace a7_Stack
         {
             _previous = _inputPrevious;
         }
+        ~ListBase()
+        {
 
+        }
+
+        public virtual void add(int _inputIndex, object _input)
+        {
+            if (_next == null)
+                _next = new ListValue();
+            _next.add(_inputIndex, _input);
+        }
+
+        public virtual int removeAt(int _inputIndex)
+        {
+            return _next.removeAt(_inputIndex);
+        }
+
+        public virtual string ToString(int _inputIndex)
+        {
+            return _next.ToString(_inputIndex);
+        }
     }
 }

@@ -27,12 +27,17 @@ namespace a7_Stack
             {
                 if (_inputIndex > _count - 1)
                     return null;
-                return _head.get(_inputIndex);
+                return _head._next.get(_inputIndex);
             }
             set
             {
-                _head.set(_inputIndex, value);
+                _head._next.set(_inputIndex, value);
             }
+        }
+
+        public void removeAt(int _inputIndex)
+        {
+            _count -= _head.removeAt(_inputIndex);
         }
 
         public override string ToString()

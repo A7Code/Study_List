@@ -17,8 +17,12 @@ namespace a7_Stack
         {
             
         }
+        ~ListValue()
+        {
+            _value = null;
+        }
 
-        public void add(int _inputIndex, object _inputObj)
+        public override void add(int _inputIndex, object _inputObj)
         {
             if (_next == null)
             {
@@ -45,17 +49,18 @@ namespace a7_Stack
                 _next.set(_inputIndex, _input);
         }
 
-        public int removeAt(int _inputIndex)
+        public override int removeAt(int _inputIndex)
         {
             if (_index == _inputIndex)
             {
-
+                _previous._next = _next;
+                return 1;
             }
-
-            return 0;
+            else
+                return _next.removeAt(_inputIndex);
         }
 
-        public string ToString(int _inputCount)
+        public override string ToString(int _inputCount)
         {
             string returnString = _index + "\t";
             returnString += _value + "\n";
