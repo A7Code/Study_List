@@ -39,7 +39,10 @@ namespace a7_Stack
 
         internal void removeData()
         {
-
+            if (_previous != null)
+                _previous._next = _next;
+            else
+                _next = _next._next;
         }
 
         public virtual string ToString(int _inputIndex, int _inputFC)

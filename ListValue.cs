@@ -9,7 +9,6 @@ namespace a7_Stack
     class ListValue : ListBase
     {
         object _value;
-        //int _index;
 
         public ListValue() { }
         public ListValue(ListValue _inputPrevious)
@@ -37,7 +36,8 @@ namespace a7_Stack
         {
             if (_inputIndex == 0)
                 return _value;
-            return _next.get(--_inputIndex);
+            return _next.get(
+                --_inputIndex);
         }
 
         public void set(int _inputIndex, object _input)
@@ -52,7 +52,7 @@ namespace a7_Stack
         {
             if (_inputIndex == 0)
             {
-                _previous._next = _next;
+                removeData();
                 return 1;
             }
             else
@@ -62,9 +62,9 @@ namespace a7_Stack
         public override int remove(int _inputCount, object _input)
         {
             int returnInt = 0;
-            if (_value.Equals(_input))
+            if (_input.Equals(_value))
             {
-                _previous._next = _next;
+                removeData();
                 returnInt++;
             }
             if (_inputCount != 1)
